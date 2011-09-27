@@ -1,0 +1,43 @@
+C:\Users\Loko\Desktop\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\dump\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Debug\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Debug\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Debug\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Debug\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Debug\ASG.exe.config

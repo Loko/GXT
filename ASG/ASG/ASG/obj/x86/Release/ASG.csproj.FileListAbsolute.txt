@@ -1,0 +1,13 @@
+C:\Users\Loko\Desktop\ASG\ASG\ASG\bin\x86\Release\ASG.exe
+C:\Users\Loko\Desktop\ASG\ASG\ASG\bin\x86\Release\ASG.pdb
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Release\ASG.exe
+C:\Users\Loko\Desktop\ASG\ASG\ASG\obj\x86\Release\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Release\ASG.exe.config
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Release\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\bin\x86\Release\ASG.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Release\ASG.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG\obj\x86\Release\ASG.pdb

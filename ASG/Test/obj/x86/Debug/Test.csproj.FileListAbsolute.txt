@@ -1,0 +1,8 @@
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\bin\Debug\Test.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\bin\Debug\Test.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\Test.Properties.Resources.resources
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\Test.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\Test\obj\x86\Debug\Test.pdb

@@ -1,0 +1,6 @@
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\bin\x86\Release\ASG_EDITOR.exe
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\bin\x86\Release\ASG_EDITOR.pdb
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\obj\x86\Release\ASG_EDITOR.exe
+C:\Users\Loko\Desktop\ASG\ASG_EDITOR\ASG_EDITOR\obj\x86\Release\ASG_EDITOR.pdb

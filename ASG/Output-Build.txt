@@ -1,0 +1,56 @@
+﻿------ Build started: Project: GXT, Configuration: Debug x86 ------
+Build started 4/7/2011 5:51:56 PM.
+CoreCompile:
+  C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb is already up to date
+ResolveAssemblyReferences:
+  A TargetFramework profile exclusion list will be generated.
+EmbedXnaFrameworkRuntimeProfile:
+Skipping target "EmbedXnaFrameworkRuntimeProfile" because all output files are up-to-date with respect to the input files.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+XnaWriteCacheFile:
+Skipping target "XnaWriteCacheFile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateNestedContentItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateNestedContentItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  GXT -> C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\GXT.dll
+
+Build succeeded.
+
+Time Elapsed 00:00:00.56
+------ Build started: Project: GXT_SANDBOX, Configuration: Debug x86 ------
+Build started 4/7/2011 5:51:56 PM.
+CoreCompile:
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\Animations\guy_default.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_torso.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_head.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_upper_arm.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_lower_arm.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_hand.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_upper_leg.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_lower_leg.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\texture_Animations_guy_foot.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\Animations\guy_walk.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\Fonts\debug_font.xnb is already up to date
+  C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\Content\Textures\grass.xnb is already up to date
+ResolveAssemblyReferences:
+  A TargetFramework profile exclusion list will be generated.
+EmbedXnaFrameworkRuntimeProfile:
+Skipping target "EmbedXnaFrameworkRuntimeProfile" because all output files are up-to-date with respect to the input files.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+XnaWriteCacheFile:
+Skipping target "XnaWriteCacheFile" because all output files are up-to-date with respect to the input files.
+XnaWriteCacheFile:
+Skipping target "XnaWriteCacheFile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateNestedContentItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateNestedContentItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  GXT_SANDBOX -> C:\Users\Loko\Desktop\ASG\GXT_SANDBOX\GXT_SANDBOX\bin\x86\Debug\GXT_SANDBOX.exe
+
+Build succeeded.
+
+Time Elapsed 00:00:00.42
+========== Build: 2 succeeded or up-to-date, 0 failed, 0 skipped ==========

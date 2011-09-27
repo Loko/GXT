@@ -1,0 +1,634 @@
+﻿2/23/2011 8:00pm
+- Ported most of the code from the old project
+- Resolved most design decisions for the DebugDrawer class
+- Cache origin value in TextField Classes
+- Started using doxygen for documentation
+- Added functions to gamepad manager
+- Added comments virtually everywhere
+
+2/25/2011 2:30pm
+- Added screen management classes and spritesheet classes
+	- Have not optimized them or found much better ways to integrate them into this system
+
+2/27/2011 12:00pm
+- Improved lerp methods to make them more efficient
+
+3/8/2011 9:40am
+- Added spritesheet classes
+- Tuned draw manager for culling
+- gxtGeometry methods now support Enumerated collections for computation methods
+
+3/8/2011 7:00 pm
+- Created base Process Class
+- Created simple wait process
+- Wrote a process manager
+- Created a test case for processes/manager in GXT_SANDBOX
+
+3/9/2011 12:45 pm
+- Added event timer and stopwatch classes
+- Added folders for future implementations (plat independent io wrapper, gjk collider, etc.)
+
+3/11/2011 3:00 pm
+- Researched physics engines
+- Created stub for gxtGeom class
+
+3/12/2011 11:00pm
+- gxtGeom class in near finished state
+- Stubbed gxtRigidBody
+- Began work on gxtRay struct
+
+3/13/2011 3:00am
+- Kept working on gxtRigidBody
+	- Sleeping, forces, torque all planned
+
+3/13/2011 2:15pm
+- Worked on gxtPhysicsWorld class
+- Added debug drawing for polygons
+- Documented gxtDebugDrawer class
+- Started to stub skeletal animation system
+- Made namespaces for GXT.Physics and GXT.Animation
+
+3/13/2011 10:30pm
+- Added extensively to the gxtRigidBody class
+- Figured out different motion types and how they will be handled
+- Started working on Physics Cast Methods (Ray, Point, and others)
+
+3/14/2011 1:00am
+- Consider moving everything from Geometry Folder into Collision Folder
+- Created gxtIActor interface for game actors
+
+3/14/2011 1:15pm
+- Moved everything in geometrey folder to collision folder
+- Made seperate file for gxtPlayerIndexEqualityComparer
+- Made gxtPlayerIndexEqualityComparer a true singleton
+- Commented/changed type names in gxtGamepadManager class
+- Changed MouseButton to gxtMouseButton
+- Added comments to Input namespace
+
+3/14/2011 10:30pm
+- Added ray intersection test methods for AABB and Sphere
+- Variable tMin, and tMax tests
+- Started to stub out gxtWorld class
+- Updated gxtIActor interface
+
+3/15/2011 3:30 pm
+- Made significant progress on GJK
+- Contains origin method almost finished
+- Added TripleProduct method to gxtMath
+- Researching EPA
+
+3/15/2011 6:30pm
+- Stubbed gxtXMLSerializer
+
+3/17/2011 7:00pm
+- Fixed serious problem in gxtGeom.SetupPolygon()
+- Made a clone method for gxtGeom
+- Updated gxtWorld with a few properties
+- Fixed gxtGeometry.CreateCirclePolygon method (pass by reference was garbage collected)
+- CollisionTestGame tesbed coded up
+	- Good testbed for debug drawing as well
+	- Noticed alpha transparency is not included in XNA Reach Profile
+
+3/18/2011 7:00pm
+- Further fixed CreateCirclePolygon
+- Made adjustments to gxtWorld
+- Implemented basic collision response
+
+3/20/2011 8:30pm
+- Got EPA implementation
+	- Inconsistent results for collision normal/depth
+- SimplexContainsOrigin(), ClosestVertex(), ClosestEdge()
+- Added MAX_ITERATIONS and TOLERANCE constants
+- Fixed gxtLine and LineBatch for points, previously the length of the line was 1 virtual unit short
+
+3/21/2011 6:00pm
+- Looked at collision response in Farseer
+- Added more debug drawing functions to test epa
+- Adjusted EPA to take winding into account
+	- Due to the way a simplex is built it could be either CW or CCW
+
+3/22/2011 7:00pm
+- EPA finally showing accurate and consistent results
+- Made a solver class for dedicated rigid body collision resolving
+- Implemented sleep management akin to Cyclone Physics
+- Added moment of intertia calculation methods for rectangles, circles, and polygons
+- Made kinematic test
+- Added prev frame acceleration for help with solving
+- included collisionresult in oncollision handler delegate
+- Implemented primitive collision response
+- Update GXT to version 0.08
+
+3/23/2011 1:30pm
+- Removed deprecated gxtGeomContact method
+- Added gxtPhysicsMaterial class
+	- Allows for shared material type, uses a class to share references everywhere for similar objects
+- Made small changes to KinematicTestGame example
+
+
+3/23/2011 10:30pm
+- Wrote a lot of ray casting code
+- Raycast method in gjkCollider
+- RayHit struct created for storing ray intersection info
+- Inefficient RayCast method implemented for OBBs
+- RayCast implemented in gxtPhysicsWorld
+- Overloads with tmin and tmax
+
+3/24/2011 7:00pm
+- Made RayTest case
+- Added AddRay to DebugDrawer
+- Added Property for Camera inside gxtWorld
+- Determined Ray -- AABB intersection is not working
+
+3/26/2011 1:30pm
+- Fixed AABB-Ray Intersection, not versions which calculate t, the normal, or the contact pt tho
+- Polygon-Ray intersection is still giving inaccurate results despite many tries
+- Cleaned up ScreenManager class, tied it into engine better
+	- The test cases really should be represented via game screens
+- Root now calls ScreenManager.Draw()
+- Timers moved into Processes Namespace
+
+3/27/2011 7:00pm
+- Got Ray-Segment and Ray-Polygon Intersection Working!
+- Made CreateCirclePolygon do so in CCW order
+- Implemented Full Ray-Polygon which calculates t, the normal, and intersection point
+	- Fixed issue with normals where the closest edge was found, not the most recently calculated intersection
+- NOTE: Collinear segments and rays may not be calculated properly
+- Tuned AddRay methods in debug drawer alot, involved adding a bunch of new properties for the class
+- Fixed gxtMaterial accessing friction in restitution property
+- Made physics world Initialize() method mandatory
+- Updated MOI calculation methods, implemented polygon MOI function
+- Put Linear and Angular Damping Members in rigid body class, not yet functional tho
+- GJK collision now using the nearest feature, not just the nearest edge
+	- More accurate colllision detection, nearest feature can be an edge or a vertex in 2D
+
+3/28/2011 2:00 am
+- Got a basic implementation of Sweep and Prune
+	- Could be more efficient, it updates everything, doesn't use persistance at all
+- Center-Extents setup not the best for a Min-Max algo like SAP
+- SAP is not working inside gxtPhysicsWorld, but I'm too tired and going to sleep
+
+3/28/2011 10:00pm
+- Affirmed gamespeed modifier is working
+- Rigid Body Damping is working
+- Material classes moved into rigid body
+- Read material on contact resolution
+
+3/29/2011 4:00pm
+- Trying very hard to get points of contact between two convex polygons in collide method
+- SupportPt overload to save farthest point
+- SimplexContainsOrigin overload to modify associated points on actual polygons
+- Fixed silly stack overflow issue with AddCircle in DebugDrawer
+- Wrote ClosestPointsOnPolygon Method
+- Added fields in CollisionResult to Get/Set the points of contact on each respective polygon
+	- Important must be reversed if geomA and geomB are swapped! like with OnCollision event
+- Subpar results after 4 hours of work finding the points of contact
+- Confirmed MOI is not calculated correctly in polygon static method for rigid bodies
+- Improved the performance of ray-polygon intersection
+	- Used even crossings technique, rather than prerequisite PolygonContains(ray.Origin) method
+
+3/29/2011 10:00pm
+- Fixed issues with one rigid - one fixed response
+- working on dynamic - dynamic response
+- fixed issue with AABB min/max debug drawing call
+- Made progress on dynamic - dynamic collision
+
+4/4/2011 10:00pm
+- Now getting consistent closest points results
+- Made preprocessor directives for certain compile time options
+- Fixed potential problem with ray casting algorithm
+
+4/13/2011 1:00pm
+- Made a SweepAndPrune collider after seeing unsatisfying Broadphase profiling
+- Made a HashedString class with customizable HashFunction
+- Implemented the Jenkins algorithm as the default
+- Made interface and base classes for broad and narrow phase colliders
+- gxtIActor now uses HashedString for type
+- Added an enormous amount of documentation
+- Cleaned up gxtPolygon, now asserts on construction for invalid polys
+- Added overloads for gxtLog.WriteLineV
+- Smarter uses of ref
+- Test case for SweepAndPrune collider
+- Got accurate sorting, adding, updating, and removing on one axis
+- Started on pair manager, but not done just yet
+- Removed edge index from gxtCollisionResult
+- Started using optional parameters to prevent insane amounts of overloads
+
+4/15/2011 3:00pm
+- Updated DisplayManager, constants for default window width and height
+- Got a fully working SortAndSweep, pair manager working too, for object-object intersection
+	- Now implementing point and raycasts
+- Eventually drawables and geoms will contain a reference to the colliders, and update and remove themselves as necessary
+- DrawManager will either need a quick test AABB/OBB on camera, or keep special references to camera box and only return the drawables hit
+
+4/17/2011 5:00pm
+- Got initial tests for PointCastAll and RayCastAll in Sort and Sweep
+	- Made forum post on GameDev.net for optimization advice, worth a shot
+- Fixed Ray-AABB intersection code giving wrong values for t
+- Optional if origin is inside parameter to solve the "inside the AABB but not the polygon it bounds" problem
+- Added any key is pressed/first pressed methods inside gxtKeyboard
+- Added equality methods for gxtPolygon
+- Added validity checks for gxtGeom
+- Added documentation to a number of relatively mature source files
+- Renamed ControlState to gxtControlState, underwent crazy amounts of refactoring
+	- Will eventually do the same for gxtVerbosityLevel
+- Found better way to do IsEmpty on SweepAndSort
+	- Also added Count for SortAndSweepCollider
+- Added methods for intersects obb in sphere
+- Added ray intersection methods in volumes themselves
+- Made a custom random number generator based on online code and xorshift, adopted for gxt
+
+4/18/2011 3:30pm
+- Implemented SortAndSweep fully into gxtPhysicsWorld
+- CollisionPairs are returned as an array rather than an enumerator because the contents of enumerators cannot be modified
+- PointCast and PointCastAll now in gxtPhysicsWorld
+
+4/19/2011 10:00pm
+- Worked on audio for a few hours
+- Seperated different components
+	- Eventually gxtAudioScene will go into gxtWorld
+- Hierarchy of sound transforms possible (i.e. master volume, volume for a scene, volume for a category, volume for a cue)
+- Unfortunately XACT makes things project specific, can only really support volume
+	- Might make abstract sound transform class which could be subclassed with class specific stuff
+- AudioScene semi imported into gxtWorld
+- Audio components require file names, and the ini file config startup system is incomplete atm
+	- temporarily hard coded audio engine file in root, will remove soon
+
+4/20/2011 10:00pm
+- Worked on texture mapping, trying to get a simple interface for texture mapped polygons
+	- Problems with transformations, but rest seems clear
+- Made basic controller interface
+	- List of controllers in gxtWorld
+
+4/21/2011 5:00pm
+- Portal 2 was too tempting to get much done
+- Still starting to making a scene graph
+	- Looked at OGRE as a reference
+
+4/22/2011
+- Scene graph template laid out
+	- Seperated nodes from drawable components, which take parameters that determine position, rotation, scale
+- Actual tree setup, add, remove, child management, all works fine
+- Process type is an int rather than an enum (easier to extend)
+- OnCollision is an event, not just a delegate
+	- New FireOnCollisionEvent method
+		- A false return to cancel collision response???
+- More work on scene graph, worked out inheritance rules
+- PathGraph cleaned up to be a functional block of code.  Not one I'm proud of (yet), but it works.
+- Controller interface, list in world, add/remove functions for controllers
+
+4/23/2011
+- Scene graph transformations now working!
+	- Still needs to be cleaner
+- Polygonal texture mapped polygons are proving to be problematic
+	- Effect projections don't seem to cooperate correctly
+- Scene graph was made late (regrettably)
+	- Rewrite needed for most rendering components
+
+4/25/2011 12:00pm
+- Screen manager and game screen draw calls now take spritebatch
+- Root documented some more, prepped for ini file startup reading
+- Ini file write method written, other changes made in INIFile class
+	- Write(), TraceString(), Modifications to AddSection(), SetValue()
+- IMPORANT: Changed profile to .Net 4 from slimmer client profile to use intermediate serializer
+	- See here: http://forums.create.msdn.com/forums/t/50785.aspx
+- Simple Static XML Write method is working
+
+4/25/2011 6:30pm
+- StopWatch and timers are now processes
+- Added more and more comments
+- Process type constants for UNKNOWN, WAIT, and TIMER
+- UnloadWorld(), ProcessManager.Clear() and other unload methods
+- World now has a name property
+
+4/29/2011 11:30pm
+- First, would like to apologize for not updating the change log in a while
+- Spent 4+ hours working on the scene graph
+- Can now properly inherit position, scale, color, rotation, visibility
+- Multiple drawable objects can be attached to one node
+- Since this basically requires a rewrite of the rendering system I made a new gxtIDrawable interface
+- Negative scale values will flip the objects properly, and you can do it for both axes
+	- Scene nodes will determine proper sprite effects and rotations, as well as abs the scale values if necessary before sending them to the draw function
+
+Three issues with scene graph
+	1) No updates, no update flags ---> everything is done in the draw method and this will get expensive for large graphs
+	2) Transforms on the root node don't always work properly (translations for example)
+	3) Color Overlay may need to go back into gxtIDrawable
+
+4/31/2011 11:00pm
+- Fixing more stuff on the scene graph
+	- Adding GetDerived functions for visibility, position, color, rot, etc
+- Stubbed out basic animation system, which extends scene nodes
+- anim clip, keyframe, tween, and pose classes written for animation
+
+5/2/2011 3:00pm
+- Get Memory Usage Function in debug class
+- Animation Tweens updated to handle backwards iteration properly
+- Cleaned up animation code in general, support for looping
+- Made an animation controller class, play/stop/rewind/stopall, and other functions which operate on named clips
+	- May need another collection in world for animation clips
+	- I don't like the idea of them being updated inside controllers that much, but it'll do for now
+
+5/5/2011 11:00am
+- RayCast, RayCastAll, PointCast, and PointCastAll functions can now take string aliased collision groups in newly added functions
+
+5/7/2011
+- Animation components sorted out
+- Using properties instead of methods in rigid body class to keep things consistent
+- Made some basic changes to rigid body class
+
+5/8/2011 2:00pm
+- Wrote a circular buffer with Enumerator
+
+5/8/2011 11:00pm
+- Making everything scene graph friendly
+- Removing all old, non-node components of rendering system
+	- Particularily time consuming for debug rendering
+- Fixed a very annoying bug in scene nodes not removing/checking the last child/attachment
+- Lots of fixes to drawables
+- Can now query any node for a merged AABB, although I'm not sure how useful that will be
+- AddAxes call in DebugDrawer
+
+5/9/2011 2:00pm
+- World no longer takes a game screen in initialize
+- Updated documentation, changed loading and unloading a bit in gxtWorld
+- World now inherits from gxtIUpdate, enabled property useful for pausing/unpausing the game world
+- Made a gxtWorldGameScreen to facilitate an easy setup and show how things are ideally structured
+- Changed gxtIActor properties a bit
+- Root init has a function for hashed strings
+- Root unload template worked out
+- Debug now has a fail method, might be better than assert(false) for areas of code which are supposed to be unreachable
+- Added AABBCast and AABBCast all methods in gxtPhysicsWorld
+	- To be efficient, had to write an AABBCastAll method in Sort and Sweep Broadphase collider
+- New circle shell drawable added
+- Lots of comments added
+- Added GetVectorAxes call to gxtMath
+- Got greedy and tried to make an in game console real quick but it is much more involved than I expected
+	- Processing input character codes in xna is a bit of a pain
+	- How to queue log messages is also a pain
+- Color in world is now NonPremultiplied
+- Got a basic in game console, it is ugly but is capable of sending commands to a source which could then parse them
+
+5/13/2011 4:00pm
+- Moved color data into drawable objects and out of scene nodes, makes for a better design in my opinion
+	- If you are going to allow multiple drawables to be attached to a node this makes a lot more sense, since overlapping is only really desirable with diff color data
+	- Required ColorOverlay to be moved into gxtIDrawable, defaults to color white
+- Fixed circle rotation (matters when scaling)
+- Lines have issues using precached values.  Doesn't always work with scaling values different for each axis.
+
+5/15/2011 2:30pm
+- Added is done bool to anim clips, added process that simply plays animations (useful for queuing them up in scenes)
+
+5/21/2011 2:00pm
+- Writing my own spritebatch to do the depth sorting myself and support polygons instead of just quads
+	- Wraps spritebatch, graphics devive, and a shader effect
+- Different view matrices for each, the effect view and the spritebatch camera transformation
+- No drawable implementation (which can be attached to the scene node) yet
+
+5/25/2011 1:15pm
+- Updated camera to have a dirty flag for transformation matrix updates
+- Camera now has a MIN_ZOOM constant
+- Camera is better documented, and constructors are adjusted to handle defaults better, at the cost of increased coupling with gxtDisplayManager
+
+- Work is continuining on gxtSpriteBatch
+	- SpriteFrame call is unfinished
+	- Added a lot of comments
+	- Effect View Matrix handling is still unfinished
+
+- gxtDrawablePolygon is improving
+- More calls for setting up UV Coordinates and their appropriate calculations (can now do texture scaling and rotation)
+
+5/25/2011 4:45pm
+- gxtSpriteBatch is somewhat ugly but now fully working code
+- Camera matrices for both have been sorted out
+- Debug Drawing for optional FillGeometry Flag being implemented
+	- If set to false, AABBs, Spheres, OBBS, Polygons, etc will just be drawn with lines
+
+5/28/2011 11:00am
+- GetLocalAABB explicitly moved into gxtIDrawable interface
+- Considering another level of abstraction that seperates gxtIDrawable and its color
+- Documented animation code, cleaned it up a bit
+- Removed screenshot code (for now)
+- Added Reset function for animation clips, processes to play animations
+- Did a number of small things to improve animation controllers
+- Considering adding support for cross fading, just not sure how I want to manage it quite yet
+
+6/24/2011 1:00pm
+- Added some constants and basic methods to the input classes
+- Added AnyKeyPressed/AnyButtonPressed and AnyKeyFirstPressed/AnyButtonFirstPressed functions to input classes
+- Created more IsInitialized() functions for a number of different objects 
+- Added a create trigger factory method for gxtGeom
+- Finally fixed raycasting issues with the SortAndSweepCollider
+	- Both unit-y direction rays, and negative X direction rays work properly
+- Deleted gxtPair
+- gxtWorld.Initialize and gxtWorld.Load all merged into gctWorld.Initialize
+- New assertion defines, error defines when needed assertions in ifelse ladders aren't found
+- added gxtDebug.SlowAssert to speed up debug builds
+	- Use on expensive assertions that are less likely to actually fail
+
+6/24/2011 5:00pm
+- Added a flag to make the resource manager habitually log the loading of resources
+- Made gxtStopWatch.Update override its parent class
+- Renamed defines to have GXT prefix for clarity
+
+6/26/2011 4:00pm
+- Reworking the scene graph to transform relative to the parent, the world, and in local space
+- Distinguishing between entities and drawables (drawables store render properties, entities need all arguments to render)
+- Caching divisor in gxtCircle
+- Updated DebugDrawer to work with new scene node system
+- Fixed rotation around parent scaling issues
+
+6/30/2011 3:00am
+- Got closest points working well enough (double corner collision still causes interpolation though)
+	- Deep penetrations are still problematic but hopefully a good solver alleviates these issues
+- Implemented physics scaling since it is supposed to make for a smoother simulation
+	- 1 meter = 30 pixels at the moment
+	- This means we need to do the proper transformations which can be a bitch
+- On collision event can now cancel the processing by the solver (return false for normal behavoir)
+- SetupFromLocalPolygon makes composite bodies possible.  Can now attach multiple geoms to the same body
+
+6/30/2011 5:30pm
+- Working on a new, persistent contact manager
+- Should now be possible to have OnSeperationEvents
+	- Perhaps collision/seperation callbacks should take all arguments, contact replaces collision result to an extent for frequently interpenentrated objects
+- Consider having multiple iterations (i.e. perform narrow phase, resolve contacts, perform narrow phase, solve contacts, etc etc)
+
+7/10/2011 1:00pm
+- Some basic maintenance in various areas
+- DEFAULT_RESTITUTION is now 0.01
+- If collision response is disabled it will no longer be performed in the new solver
+- Adjusted contact points to operate on epa simplices, not the gjk termination simplex
+- Implemented multiple iterations for the solver
+
+7/11/2011 6:00pm
+- Stubbed OnSeperation delegate handler
+- Functions to query collision results on individual geoms and not just the entire world
+	- Take collision enabled flags and collides with groups into account
+- gxtPhysicsWorld has a more complete dispose method
+- SortAndSweepCollider has a remove all objects method
+
+7/12/2011 5:30pm
+- Registered the camera in gxtWorld.Initialize
+- gxtStopWatch was private for some reason, made it public
+- Made gxtCameraController enabled by default
+- Added ONE_OVER_PHYSICS_SCALE constant to physics world
+- Made changes to things that were bugging me about gxtCamera
+	- Provided SetupScreenScale function, allow for manual setting of ScreenScale
+	- Don't use an AABB for position, now there are seperate vectors for the extents and the position
+- gxtPhysicsMaterial now attached to gxtGeom instead of gxtRigidBody
+	- Moved DEFAULT_RESITITUTION and DEFAULT_FRICTION into gxtPhysicsMaterial
+	- Made them implemented by the default constructor
+- Cleaned up bad code in gxtPhysicsWorld
+	- Made gxtContact IComparable (allows for encapsulation and sorting)
+- Changed NarrowPhase function
+	- No longer takes dt
+	- Uses hash sets to efficiently find seperations
+	- generates enabled/disabled contacts (so OnCollision and OnSeperation events are still fired if you handle the response yourself)
+- gxtContact now has an enabled flag
+	- Solver doesn't process disabled contacts
+
+7/13/2011 2:30pm
+- RigidBody confirms the motionType is Dynamic for certain calls
+- Better support for Static and Kinematic bodies (automatically setting certain mass and inertia values to zero)
+- gxtContact is smarter at determining if the contatc should be enabled/disabled
+- Fixed gxtRigidBody.GetPolygonInertia function
+- FixedRotation flag works properly
+- Fixed inertia issues with the default gxtRigidBody constructor
+- Fixed *Cast methods in SortAndSweepCollider
+
+7/15/2011 2:00pm
+- Added gxtMath.RotateVector and gxtMath.GetRotatedVector for faster alternatives to using matrices
+- Added gxtMath.AbsDot for experimentation purposes
+- Adjusted PointCast and AABBCast to use the world centroid, fixed SphereCastAll
+- Added singular SphereCast method
+- Implemented gxtSharedDrawable
+	- Allows multiple entities to be controlled by the same, referenceable, render properties with gxtSharedRenderProperties 
+
+7/17/2011 7:30pm
+- OnSeperation and OnCollision handlers now always pass the associated object as the first parameter thru its handler
+- Contact solving now supports geoms with no rigid body attachment (they act just like static rigid bodies)
+- Made gxtEventTimer.Update an override function like it was supposed to
+- ResourceManager logging flag taken in Initialize method
+
+7/27/2011 7:30pm
+- Added ellipse, rounded rectangle, and capsule creation methods in gxtGeometry
+- Fixed origin not being updated properly in the constructor of gxtTextField
+- ResourceManager moved into GXT namespace
+- Renamed gxtDebugDrawable to gxtDebugNode
+- Added Scale and RenderDepth to gxtDebugDrawer
+	- Can now draw geometry without scatering render depth calls in a number of different places
+	- Can now feed in geometry used in the physics world without having to do the transformations yourself
+
+7/28/2011 5:30pm
+- Fixed Scaling in ray debug drawing
+- Apparently contact resolution is broken again -- off to fix it
+	- Shouldn't have commented out a line in gxtContact that stored the combined restitution
+	- When solving a contact pair, it solves it at both contact positions
+		- Not currently optimized, normals and penetration depths are mirrored across both contacts
+		- InverseMass and InverseMassSums are calculated twice, one time each in PreStepContact
+		- Closest points calculations seem to fail when not using boxes
+
+7/29/2011 3:00pm
+- Added some gxtLog.WriteLineV overloads (uses global verbosity)
+- Fixed conitional attributes for assertions
+- Added SetDerivedScale method for scene nodes
+- Removed inheritance rules from scene nodes
+- Tweaked scene nodes in general to be safer
+	- Added assertions for attaching the same drawable twice
+	- Added assertions for parenting a node to itself
+- Added SmoothStep functions for floats and vectors to gxtMath
+
+7/29/2011 6:00pm
+- Implementing more efficient scene graph updates
+	- Keep a static update queue
+	- Need to update the scene graph in gxtWorld
+	- Uses simple dirty flag
+	- Draw call now just uses derived values
+- New scene graph updating method is working
+	- Needs more work though, specifically determining when a node is dirty (like when adding a child) and the like
+- Decided to keep gxtISceneNode interface, even though I don't like the parent node being settable, but it's unavoidable in its current form
+- Moved static node queue into gxtSceneGraph (which also could use an interface btw)
+- Need to figure out if I'm gonna support zero scale values, right now they screw everything up
+- Move the scene graph update call into the draw method...it prevents a lot of headaches
+
+7/30/2011 5:00pm
+- Cleaned up gxtRoot, gxtLog, gxtMath
+- Made some of this code a bit safer, a few more checks
+- TrigTables can be compiled out completely if you need the memory or just don't need them
+- Updated and refactored gxtDisplayManager
+	- No longer logs in SupportsFullScreen method
+	- WindowWidth is now more properly named ResolutionWidth
+	- Initialize method is much more thorough in handling resolution requests
+- Piecing together what needs to be placed inside of gxtRoot's config file
+- Add methods in gxtRigidBody renamed to Apply
+- Made static node update queue in gxtSceneGraph private
+
+7/31/2011 5:00pm
+- Writing a whole new gxtGraphicsBatch
+- Can finally take just the view matrix on begin and eliminate dependencies on the gxtCamera class
+- Fixed texture filtering offset that was resulting in blurry textures
+- Fixed WrapAngle function (now uses new cached 1 / PI value)
+- Wrote a semi functional matrix decomposition function (the determinant being negative basically just means that at least 1 scale axis is negative)
+
+8/2/2011 4:00pm
+- It turns out Updating the scene graph in Draw is a bad idea because we may need to alter the values of VertexBuffers (which must be done in Update)
+	- Added a LateUpdate() function in gxtWorld to get around this
+	- This is a better place for the scene graph to be update, also more appropriate area to invoke the OnWorldUpdate event handler
+Should processes and actors have a LateUpdate() function call?
+- Moving to a material based setup
+- Observer Pattern is regrettably moved into the materials, but it beats traversing the entire tree in an update and checking for changes that way 
+
+8/5/2011 6:00pm
+- New material/primitive based transformation is almost complete
+- New gxtMesh for indexed triangle lists
+- New material system fully integrated
+- Debug Drawer updated to support these features
+- Bugs fixed in gxtGraphicsbatch with plenty more to iron out (inline depths not working properly, will different vertex types cause stalls?, sorting isn't totally worked out either)
+- Scene nodes could now pass a cached derived matrix (this would be faster for everything accept strings (which are secondary anyways))
+- gxtMath.Decompose2D 
+
+
+8/10/2011
+- Did some code cleanup just about everywhere
+- Old code which hadn't been touched in a while got updated, screen manager is still pretty terrible tho
+- Disposal of objects is now much better throughout
+- Experimenting with a shared index buffer for quads
+- Wrote a text file logging my thoughts on loading this thing (textures, rigid bodies, geoms, etc. etc.)
+- Component Entity model is still a big if at this point
+- Made a keyboard listener process to decouple it from the keyboard itself
+	- At times you will want to disable the processing of such input listening without disabling the keyboard itself
+
+8/12/2011
+- Really ironed out the InGameConsole components
+- CommandProcessor component needs to be more robust, but is functional
+- Fixed animation clips playing backwards
+- HandleInput now takes gameTime
+- Controllers now have a flag for input handling
+- If set to true, the controller is updated in HandleInput first
+- The other controllers are updated in Update()
+	- Every controller still has its late update function called
+- AnimationState functionality is coming along rather nicely
+	- AnimationState struct looks aligned to me
+
+For fast interpolation...instead of lots of of new memory allocations being made
+Have one interpolator
+One variable used for each value, translation, rotation, scale, color overlay, etc.
+One big array with the MAX_UVCOORDINATES, pass them in with a vertex stride argument
+Then the meshes can take arguments with a source index and a length
+
+Change name of Tween to AnimationClip
+Change name of AnimationClip to Animation
+Have Animation controller operate on actual animations and not just animation clips
+
+how does box2d handle fixed rotation, esp in update method
+gxtPolygon convexity test is still not working
+
+- In Game Console and a lot of the samples need to be uncommented and adjusted to support the changes
+- No plan to support triangle strips at the moment...
+- Scene Node still needs to figure out how to calculate AABBs (they are a pain for negative scale values)
+- No split screen support at the moment
+	- It would be more efficient if done on the same batch
+		- But then culling to reduce batches is basically removed
+- Alpha Test in gxtGraphicBatch?
+- Use matrix transforms by default?
+
+Note: Rewrite the ScreenManager...it's way too similar to the Developer's Club version and has a lot of flaws for this system

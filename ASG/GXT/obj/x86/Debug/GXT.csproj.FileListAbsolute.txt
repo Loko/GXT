@@ -1,0 +1,54 @@
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\Loko\Desktop\dump\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\Loko\Desktop\dump\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\dump\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\Loko\Desktop\dump\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\Loko\Desktop\dump\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\dump\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\dump\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\dump\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\Loko\Desktop\Past Projects\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\IGMAdmin\Downloads\ASG\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\IGMAdmin\Downloads\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\IGMAdmin\Downloads\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\IGMAdmin\Downloads\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\IGMAdmin\Downloads\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\IGMAdmin\Downloads\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\IGMAdmin\Downloads\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\IGMAdmin\Downloads\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\bin\x86\Debug\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\bin\x86\Debug\DeminaRuntime.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\GXT\obj\x86\Debug\GXT.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\bin\x86\Debug\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\bin\x86\Debug\GXT.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Debug\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Debug\GXT.pdb

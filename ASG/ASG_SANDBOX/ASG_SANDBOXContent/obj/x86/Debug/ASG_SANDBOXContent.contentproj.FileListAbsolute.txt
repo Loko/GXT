@@ -1,0 +1,7 @@
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\dump\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\Past Projects\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IGMAdmin\Downloads\ASG\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOXContent\obj\x86\Debug\ResolveAssemblyReference.cache

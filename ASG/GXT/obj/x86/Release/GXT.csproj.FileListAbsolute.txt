@@ -1,0 +1,14 @@
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Release\GXT.dll
+C:\Users\Loko\Desktop\ASG\GXT\obj\x86\Release\GXT.pdb
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Release\GXT_ASSETS\gxt\fonts\debug_font.xnb
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Release\GXT.dll
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Release\GXT.pdb
+C:\Users\Loko\Desktop\ASG\GXT\bin\x86\Release\DeminaRuntime.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\bin\x86\Release\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\bin\x86\Release\GXT.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Release\GXT.dll
+C:\Users\Loko\Documents\Code\asg_project\ASG\GXT\obj\x86\Release\GXT.pdb

@@ -1,0 +1,1833 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nuclex.Input</name>
+    </assembly>
+    <members>
+        <member name="T:Nuclex.Input.ControllerEventArgs">
+            <summary>Carries the arguments for the controller detection event</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerEventArgs.#ctor">
+            <summary>Initializes a new argument container for keyboard/mouse input</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerEventArgs.#ctor(Nuclex.Input.ExtendedPlayerIndex)">
+            <summary>Initializes a new argument container with a controller index</summary>
+            <param name="playerIndex">Player whose controller was detected</param>
+        </member>
+        <member name="F:Nuclex.Input.ControllerEventArgs.playerIndex">
+            <summary>Index of the detected controller</summary>
+        </member>
+        <member name="P:Nuclex.Input.ControllerEventArgs.PlayerIndex">
+            <summary>Index of the controller on which a button was pressed</summary>
+            <remarks>
+              If this is null, the player pressed a button/key on his mouse/keyboard.
+            </remarks>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector">
+            <summary>Detects which controller the player is using</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.#ctor(Nuclex.Input.IInputService)">
+            <summary>Initializes a new controller detector</summary>
+            <param name="inputService">
+              Input service the detector uses to find out the controller
+            </param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.Dispose">
+            <summary>Immediately releases all resources owned by the instance</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.Start">
+            <summary>Begins monitoring input devices</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.Stop">
+            <summary>Stops monitoring input devices</summary>
+            <remarks>
+              After the detection event was triggered once, this is automatically called.
+              You do not need to explicitly call this unless you want to abort detection.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.OnControllerDetected(System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Fires the ControllerDetected event</summary>
+            <param name="playerIndex">Event that will be fired</param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.detected(System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Called when a key/button press has been detected</summary>
+            <param name="playerIndex">Index of the player who pressed a key/button</param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.subscribeAllEvents">
+            <summary>Subscribes the detector to all input devices</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.unsubscribeAllEvents">
+            <summary>Unsubscribes the detector from all input devices</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.inputService">
+            <summary>Input service the detector uses to access the controllers</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.started">
+            <summary>Whether the detection is currently running</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.subscribedKeyReporters">
+            <summary>Currently subscribed key press reporters</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.subscribedMouseReporters">
+            <summary>Currently subscribed mouse button press reporters</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.subscribedGamePadReporters">
+            <summary>Currently subscribed game pad button press reporters</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.detectedDelegate">
+            <summary>Delegate for the controllerDetected() method</summary>
+        </member>
+        <member name="E:Nuclex.Input.ControllerDetector.ControllerDetected">
+            <summary>
+              Called when the player pressed a button on one of the controllers
+            </summary>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector.DetectionDelegate">
+            <summary>Reports the index of the player who pressed a key/button</summary>
+            <param name="playerIndex">Reported player index</param>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector.Reporter">
+            <summary>Base class for key/button press reporters</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.Reporter.#ctor(Nuclex.Input.ControllerDetector.DetectionDelegate,System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Initializes a new reporter</summary>
+            <param name="callback">Callback the reporter uses to report</param>
+            <param name="playerIndex">Player index the reporter will report</param>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.Reporter.Callback">
+            <summary>Callback the reporter invokes on a button/key press</summary>
+        </member>
+        <member name="F:Nuclex.Input.ControllerDetector.Reporter.PlayerIndex">
+            <summary>Player index the reporter will provide to the callback</summary>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector.KeyReporter">
+            <summary>Reports key presses on a keyboard</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.KeyReporter.#ctor(Nuclex.Input.ControllerDetector.DetectionDelegate,System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Initializes a new keyboard reporter</summary>
+            <param name="callback">Callback the reporter uses to report</param>
+            <param name="playerIndex">Player index the reporter will report</param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.KeyReporter.KeyPressed(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>Subscribable callback for a key press</summary>
+            <param name="key">Key that has been pressed</param>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector.MouseButtonReporter">
+            <summary>Reports buttons pressed on a mouse</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.MouseButtonReporter.#ctor(Nuclex.Input.ControllerDetector.DetectionDelegate,System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Initializes a new mouse reporter</summary>
+            <param name="callback">Callback the reporter uses to report</param>
+            <param name="playerIndex">Player index the reporter will report</param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.MouseButtonReporter.MouseButtonPressed(Nuclex.Input.MouseButtons)">
+            <summary>Subscribable callback for a mouse button press</summary>
+            <param name="buttons">Mouse buttons that have been pressed</param>
+        </member>
+        <member name="T:Nuclex.Input.ControllerDetector.GamePadButtonReporter">
+            <summary>Reports buttons pressed on a game pad</summary>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.GamePadButtonReporter.#ctor(Nuclex.Input.ControllerDetector.DetectionDelegate,System.Nullable{Nuclex.Input.ExtendedPlayerIndex})">
+            <summary>Initializes a new game pad reporter</summary>
+            <param name="callback">Callback the reporter uses to report</param>
+            <param name="playerIndex">Player index the reporter will report</param>
+        </member>
+        <member name="M:Nuclex.Input.ControllerDetector.GamePadButtonReporter.ButtonPressed(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Subscribable callback for a game pad button press</summary>
+            <param name="buttons">Game pad buttons that have been pressed</param>
+        </member>
+        <member name="T:Nuclex.Input.CollectionHelper">
+            <summary>Provides helper methods for collections</summary>
+        </member>
+        <member name="M:Nuclex.Input.CollectionHelper.GetIfExists``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>Returns an item from a list if the index exists</summary>
+            <typeparam name="ItemType">Type of the item that will be returned</typeparam>
+            <param name="list">List the item will be taken from</param>
+            <param name="index">Index from which the item will be taken</param>
+            <returns>The item if the index existed, otherwise a default item</returns>
+        </member>
+        <member name="M:Nuclex.Input.CollectionHelper.DisposeItems``1(System.Collections.Generic.IList{``0})">
+            <summary>Disposes all items in a list</summary>
+            <typeparam name="ItemType">Type of item that will be disposed</typeparam>
+            <param name="list">List containing the items that will be disposed</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.ExtendedAxes">
+            <summary>Available axes on a controller</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.X">
+            <summary>X-axis, usually the left-right movement of a stick</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.Y">
+            <summary>Y-axis, usually the forward-backward movement of a stick</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.Z">
+            <summary>Z-axis, often the throttle control</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.VelocityX">
+            <summary>X-axis velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.VelocityY">
+            <summary>Y-axis velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.VelocityZ">
+            <summary>Z-axis velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AccelerationX">
+            <summary>X-axis acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AccelerationY">
+            <summary>Y-axis acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AccelerationZ">
+            <summary>Z-axis acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.ForceX">
+            <summary>X-axis force</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.ForceY">
+            <summary>Y-axis force</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.ForceZ">
+            <summary>Z-axis force</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.RotationX">
+            <summary>X-axis rotation</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.RotationY">
+            <summary>Y-axis rotation</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.RotationZ">
+            <summary>Z-axis rotation (often called the rudder)</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularVelocityX">
+            <summary>X-axis angular velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularVelocityY">
+            <summary>Y-axis angular velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularVelocityZ">
+            <summary>Z-axis angular velocity</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularAccelerationX">
+            <summary>X-axis angular acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularAccelerationY">
+            <summary>Y-axis angular acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.AngularAccelerationZ">
+            <summary>Z-axis angular acceleration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.TorqueX">
+            <summary>X-axis torque</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.TorqueY">
+            <summary>Y-axis torque</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedAxes.TorqueZ">
+            <summary>Z-axis torque</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.ExtendedGamePadState">
+            <summary>Extended game pad state with additional buttons and axes</summary>
+            <summary>Extended game pad state with additional buttons and axes</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.GetButton(System.Int32)">
+            <summary>Retrieves the state of the specified button</summary>
+            <param name="buttonIndex">
+              Index of the button whose state will be retrieved
+            </param>
+            <returns>The state of the queried button</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.IsButtonDown(System.Int32)">
+            <summary>Determines whether the specified button is pressed down</summary>
+            <param name="buttonIndex">Button which will be checked</param>
+            <returns>True if the specified button is pressed down</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.IsButtonUp(System.Int32)">
+            <summary>Determines whether the specified button is up</summary>
+            <param name="buttonIndex">Button which will be checked</param>
+            <returns>True if the specified button is up</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.GetAxis(Nuclex.Input.Devices.ExtendedAxes)">
+            <summary>Retrieves the state of the specified axis</summary>
+            <param name="axis">Axis whose state will be retrieved</param>
+            <returns>The state of the specified axis</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.GetSlider(Nuclex.Input.Devices.ExtendedSliders)">
+            <summary>Retrieves the state of the specified slider</summary>
+            <param name="slider">Slider whose state will be retrieved</param>
+            <returns>The state of the specified slider</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.GetPov(System.Int32)">
+            <summary>Retrieves the PoV controller of the specified index</summary>
+            <param name="index">Index of the PoV controller that will be retrieved</param>
+            <returns>The state of the PoV controller with the specified index</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.DpadFromPov(System.Int32)">
+            <summary>Converts a PoV controller state into a directional pad state</summary>
+            <param name="pov">PoV controller state that will be converted</param>
+            <returns>The equivalent directional pad state</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.PovFromDpad(Microsoft.Xna.Framework.Input.GamePadDPad)">
+            <summary>Converts a directional pad state into a PoV controller state</summary>
+            <param name="dpad">Directional pad state that will be converted</param>
+            <returns>The equivalent PoV controller pad state</returns>
+            <remarks>
+              Conflicting states (eg. directional pad 'down' and 'up' at the same time)
+              are resolved as if the specific axis was neutral.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.ButtonsFromExtendedButtons(System.UInt64)">
+            <summary>
+              Converts an extended button bit mask into the XNA's own button mask
+            </summary>
+            <param name="extendedButtons1">Button bit mask that will be converted</param>
+            <returns>Equivalent XNA button mask for the provided button bit mask</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.ExtendedButtonsFromButtons(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>
+              Converts XNA's own button mask into an extended button bit mask
+            </summary>
+            <param name="buttons">XNA button mask that will be converted</param>
+            <returns>Equivalent extended button bit mask for the provided button mask</returns>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ButtonOrder">
+            <summary>
+              Order in which the buttons in the extended state map to XNAs Buttons enumeration
+            </summary>
+            <remarks>
+              Tested this with an XBox 360 game pad. An older game pad used a completely
+              arbitrary order and there's no way to find out which button resembles what,
+              so I'm hoping that the XBox 360's DirectInput driver sets an inofficial
+              standard and others copy the order in which its buttons are listed.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.InternalGetButtons(System.UInt64@,System.UInt64@)">
+            <summary>Internal helper method that retrieves the raw button states</summary>
+            <param name="buttons1">State of the first 64 buttons</param>
+            <param name="buttons2">State of the second 64 buttons</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.countBits(System.UInt32)">
+            <summary>Returns the number of bits set in an unsigned integer</summary>
+            <param name="value">Value whose bits will be counted</param>
+            <returns>The number of bits set in the unsigned integer</returns>
+            <remarks>
+              Based on a trick revealed here:
+              http://stackoverflow.com/questions/109023
+            </remarks>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AvailableAxes">
+            <summary>Axes for which this state provides values</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.X">
+            <summary>State of the device's X axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Y">
+            <summary>State of the device's Y axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Z">
+            <summary>State of the device's Z axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.VelocityX">
+            <summary>State of the device's X velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.VelocityY">
+            <summary>State of the device's Y velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.VelocityZ">
+            <summary>State of the device's Z velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AccelerationX">
+            <summary>State of the device's X acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AccelerationY">
+            <summary>State of the device's Y acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AccelerationZ">
+            <summary>State of the device's Z acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ForceX">
+            <summary>State of the device's X force axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ForceY">
+            <summary>State of the device's Y force axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ForceZ">
+            <summary>State of the device's Z force axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.RotationX">
+            <summary>State of the device's X rotation axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.RotationY">
+            <summary>State of the device's Y rotation axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.RotationZ">
+            <summary>State of the device's Z rotation axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularVelocityX">
+            <summary>State of the device's X angular velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularVelocityY">
+            <summary>State of the device's Y angular velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularVelocityZ">
+            <summary>State of the device's Z angular velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularAccelerationX">
+            <summary>State of the device's X angular acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularAccelerationY">
+            <summary>State of the device's Y angular acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AngularAccelerationZ">
+            <summary>State of the device's Z angular acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.TorqueX">
+            <summary>State of the device's X torque axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.TorqueY">
+            <summary>State of the device's Y torque axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.TorqueZ">
+            <summary>State of the device's Z torque axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ButtonCount">
+            <summary>Number of buttons provided by the state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AvailableSliders">
+            <summary>Sliders for which this state provides values</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Slider1">
+            <summary>First slider, formerly the U-axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Slider2">
+            <summary>Second slider, formerly the V-axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.VelocitySlider1">
+            <summary>First velocity slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.VelocitySlider2">
+            <summary>second velocity slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AccelerationSlider1">
+            <summary>First acceleration slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.AccelerationSlider2">
+            <summary>Second acceleration slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ForceSlider1">
+            <summary>First force slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.ForceSlider2">
+            <summary>Second force slider</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.PovCount">
+            <summary>Number of point-of-view controllers in this state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Pov1">
+            <summary>Position of the first point-of-view controller</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Pov2">
+            <summary>Position of the second point-of-view controller</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Pov3">
+            <summary>Position of the third point-of-view controller</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.Pov4">
+            <summary>Position of the fourth point-of-view controller</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.buttonState1">
+            <summary>Bitfield containing the first 64 buttons</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedGamePadState.buttonState2">
+            <summary>Bitfield containing the last 64 buttons</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.#ctor(Nuclex.Input.Devices.ExtendedAxes,System.Single[],Nuclex.Input.Devices.ExtendedSliders,System.Single[],System.Int32,System.Boolean[],System.Int32,System.Int32[])">
+            <summary>Initializes a new extended game pas state to the provided values</summary>
+            <param name="availableAxes">Bit mask of the axes made available in the state</param>
+            <param name="axes">
+              Values of all 24 axes in the order they appear in the ExtendedAxes enumeration
+            </param>
+            <param name="availableSliders">Bit mask of the slider provided by the state</param>
+            <param name="sliders">
+              Values of all 8 sliders in the order they appear in the ExtendedSliders enumeration
+            </param>
+            <param name="buttonCount">Number of buttons provided by the state</param>
+            <param name="buttons">State of all 128 buttons in the state</param>
+            <param name="povCount">Number of Point-of-View controllers in the state</param>
+            <param name="povs">State of all 4 Point-of-View controllers</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ExtendedGamePadState.#ctor(Microsoft.Xna.Framework.Input.GamePadState@)">
+            <summary>
+              Initializes a new extended game pad state from a standard game pad state
+            </summary>
+            <param name="gamePadState">
+              Standard game pad state the extended game pad state is initialized from
+            </param>
+        </member>
+        <member name="P:Nuclex.Input.Devices.ExtendedGamePadState.AxisCount">
+            <summary>Number of available axes in this state</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.ExtendedGamePadState.SliderCount">
+            <summary>Number of available sliders in this state</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.ExtendedSliders">
+            <summary>Extended slider axes provided by a game pad or joystick</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Slider1">
+            <summary>First additional axis (formerly called U-axis)</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Slider2">
+            <summary>Second additional axis (formerly called V-axis)</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Velocity1">
+            <summary>First extra velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Velocity2">
+            <summary>Second extra velocity axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Acceleration1">
+            <summary>First extra acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Acceleration2">
+            <summary>Second extra acceleration axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Force1">
+            <summary>First extra force axis</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.ExtendedSliders.Force2">
+            <summary>Second extra force axis</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.GamePad">
+            <summary>Interfaces with an XBox 360 controller via XNA (XINPUT)</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.IGamePad">
+            <summary>Specialized input device for game pad-like controllers</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.IInputDevice">
+            <summary>Generic input device</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IInputDevice.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IInputDevice.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="P:Nuclex.Input.Devices.IInputDevice.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.IInputDevice.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IGamePad.GetState">
+            <summary>Retrieves the current state of the game pad</summary>
+            <returns>The current state of the game pad</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IGamePad.GetExtendedState">
+            <summary>Retrieves the current DirectInput joystick state</summary>
+            <returns>The current state of the DirectInput joystick</returns>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IGamePad.ButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IGamePad.ButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IGamePad.ExtendedButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IGamePad.ExtendedButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.GetState">
+            <summary>Retrieves the current state of the game pad</summary>
+            <returns>The current state of the game pad</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.GetExtendedState">
+            <summary>Retrieves the current DirectInput joystick state</summary>
+            <returns>The current state of the DirectInput joystick</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.OnButtonPressed(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Fires the ButtonPressed event</summary>
+            <param name="buttons">Buttons that have been pressed</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.OnButtonReleased(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Fires the ButtonReleased event</summary>
+            <param name="buttons">Buttons that have been released</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.OnExtendedButtonPressed(System.UInt64,System.UInt64)">
+            <summary>Fires the ExtendedButtonPressed event</summary>
+            <param name="buttons1">Button or buttons that have been pressed or released</param>
+            <param name="buttons2">Button or buttons that have been pressed or released</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.GamePad.OnExtendedButtonReleased(System.UInt64,System.UInt64)">
+            <summary>Fires the ButtonReleased event</summary>
+            <param name="buttons1">Button or buttons that have been pressed or released</param>
+            <param name="buttons2">Button or buttons that have been pressed or released</param>
+        </member>
+        <member name="E:Nuclex.Input.Devices.GamePad.ButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.GamePad.ButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.GamePad.ExtendedButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.GamePad.ExtendedButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.GamePad.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.GamePad.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.GamePad.HaveEventSubscribers">
+            <summary>Whether subscribers to the standard button events exist</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.GamePad.HaveExtendedEventSubscribers">
+            <summary>Whether subscribers to the extended button events exist</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.GamePadButtonDelegate">
+            <summary>Delegate use to report presses and releases of game pad buttons</summary>
+            <param name="buttons">Button or buttons that have been pressed or released</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.ExtendedGamePadButtonDelegate">
+            <summary>Delegate use to report presses and releases of game pad buttons</summary>
+            <param name="buttons1">Button or buttons that have been pressed or released</param>
+            <param name="buttons2">Button or buttons that have been pressed or released</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.KeyDelegate">
+            <summary>Delegate used to report key presses and releases</summary>
+            <param name="key">Key that has been pressed or released</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.CharacterDelegate">
+            <summary>Delegate used to report characters typed on a keyboard</summary>
+            <param name="character">Character that has been typed</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.IKeyboard">
+            <summary>Specialized input device for keyboard-like controllers</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IKeyboard.GetState">
+            <summary>Retrieves the current state of the keyboard</summary>
+            <returns>The current state of the keyboard</returns>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IKeyboard.KeyPressed">
+            <summary>Fired when a key has been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IKeyboard.KeyReleased">
+            <summary>Fired when a key has been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IKeyboard.CharacterEntered">
+            <summary>Fired when the user has entered a character</summary>
+            <remarks>
+              This provides the complete, translated character the user has entered.
+              Handling of international keyboard layouts, shift key, accents and
+              other special cases is done by Windows according to the current users'
+              country and selected keyboard layout.
+            </remarks>
+        </member>
+        <member name="T:Nuclex.Input.Devices.MouseMoveDelegate">
+            <summary>Delegate used to report movement of the mouse cursor</summary>
+            <param name="x">New X coordinate of the mouse cursor</param>
+            <param name="y">New Y coordinate of the mouse cursor</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.MouseButtonDelegate">
+            <summary>
+              Delegate used to report a press or released of one or more mouse buttons
+            </summary>
+            <param name="buttons">Button or buttons that have been pressed or released</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.MouseWheelDelegate">
+            <summary>Delegate used to report a rotation of the mouse wheel</summary>
+            <param name="ticks">Number of ticks the mouse wheel has been rotated</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.IMouse">
+            <summary>Specializd input devices for mouse-like controllers</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IMouse.GetState">
+            <summary>Retrieves the current state of the mouse</summary>
+            <returns>The current state of the mouse</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.IMouse.MoveTo(System.Single,System.Single)">
+            <summary>Moves the mouse cursor to the specified location</summary>
+            <param name="x">New X coordinate of the mouse cursor</param>
+            <param name="y">New Y coordinate of the mouse cursor</param>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IMouse.MouseMoved">
+            <summary>Fired when the mouse has been moved</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IMouse.MouseButtonPressed">
+            <summary>Fired when one or more mouse buttons have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IMouse.MouseButtonReleased">
+            <summary>Fired when one or more mouse buttons have been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.IMouse.MouseWheelRotated">
+            <summary>Fired when the mouse wheel has been rotated</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.TouchDelegate">
+            <summary>Delegate used to report touch actions</summary>
+            <param name="id">ID of the distinct touch</param>
+            <param name="position">Position the action occurred at</param>
+        </member>
+        <member name="T:Nuclex.Input.Devices.ITouchPanel">
+            <summary>Specializd input devices for mouse-like controllers</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.ITouchPanel.GetState">
+            <summary>Retrieves the current state of the touch panel</summary>
+            <returns>The current state of the touch panel</returns>
+        </member>
+        <member name="E:Nuclex.Input.Devices.ITouchPanel.Pressed">
+            <summary>Triggered when the user presses on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.ITouchPanel.Moved">
+            <summary>Triggered when the user moves his touch on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.ITouchPanel.Released">
+            <summary>Triggered when the user releases the screen again</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.ITouchPanel.MaximumTouchCount">
+            <summary>Maximum number of simultaneous touches the panel supports</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.MockedGamePad">
+            <summary>Code-controllable game pad for unit testing</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.#ctor">
+            <summary>Initializes a new mocked game pad</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.GetState">
+            <summary>Retrieves the current state of the game pad</summary>
+            <returns>The current state of the game pad</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.GetExtendedState">
+            <summary>Retrieves the current DirectInput joystick state</summary>
+            <returns>The current state of the DirectInput joystick</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Press(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Presses the specified buttons on the game pad</summary>
+            <param name="buttons">Buttons that will be pressed</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Press(System.Int32)">
+            <summary>Presses the specified button on the game pad</summary>
+            <param name="extendedButtonIndex">Index of the button that will be pressed</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Release(Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Releases the specified buttons on the game pad</summary>
+            <param name="buttons">Buttons that will be released</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Release(System.Int32)">
+            <summary>Releases the specified button on the game pad</summary>
+            <param name="extendedButtonIndex">Button that will be released</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.MoveLeftThumbStick(System.Single,System.Single)">
+            <summary>Moves the left thumb stick to the specified position</summary>
+            <param name="x">X coordinate of the thumb stick's position</param>
+            <param name="y">Y coordinate of the thumb stick's position</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.MoveRightThumbStick(System.Single,System.Single)">
+            <summary>Moves the right thumb stick to the specified position</summary>
+            <param name="x">X coordinate of the thumb stick's position</param>
+            <param name="y">Y coordinate of the thumb stick's position</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.PushLeftTrigger(System.Single)">
+            <summary>Pushes the left analog trigger to the specified depth</summary>
+            <param name="depth">Depth the left analog trigger will be pushed to</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.PushRightTrigger(System.Single)">
+            <summary>Pushes the right analog trigger to the specified depth</summary>
+            <param name="depth">Depth the right analog trigger will be pushed to</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.MoveAxis(Nuclex.Input.Devices.ExtendedAxes,System.Single)">
+            <summary>Moves an axis to the specified position</summary>
+            <param name="axis">Axis that will be moved</param>
+            <param name="position">
+              Position the axis will be moved to in the range from -1.0 to +1.0
+            </param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.MoveSlider(Nuclex.Input.Devices.ExtendedSliders,System.Single)">
+            <summary>Moves a slider to the specified position</summary>
+            <param name="slider">Slider that will be moved</param>
+            <param name="position">
+              Position the slider will be moved to in the range from 0.0 to 1.0
+            </param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.MovePov(System.Int32,System.Int32)">
+            <summary>Moves a PoV controller into the specified position</summary>
+            <param name="index">Index of the PoV controller that will be moved</param>
+            <param name="position">Position the PoV controller will be moved to</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Attach">
+            <summary>Attaches (connects) the game pad</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.Detach">
+            <summary>Detaches (disconnects) the game pad</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.generateEvents(Nuclex.Input.Devices.ExtendedGamePadState@,Nuclex.Input.Devices.ExtendedGamePadState@)">
+            <summary>Generates events for any changes to the button states</summary>
+            <param name="previous">Previous state of the game pad to compare against</param>
+            <param name="current">Current state of the game pad</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.buildState">
+            <summary>Constructs an extended game pad state from the current state</summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.updateButtonStates(Microsoft.Xna.Framework.Input.Buttons,System.Boolean)">
+            <summary>Updates the state of all buttons in the mask</summary>
+            <param name="buttonMask">Mask of buttons that will be updated</param>
+            <param name="state">New state the buttons will assume</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.MockedGamePad.enforceButtonCountAtLeast(System.Int32)">
+            <summary>
+              Throws an exception if less than the required number of buttons are available
+            </summary>
+            <param name="requiredCount">Required number of buttons</param>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.states">
+            <summary>Snapshots of the game pad state waiting to be processed</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.current">
+            <summary>Currently published game pad state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.isAttached">
+            <summary>Whether the game pad is attached</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.buttonCount">
+            <summary>Number of buttons available on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.buttonStates">
+            <summary>Current state of the buttons on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.availableAxes">
+            <summary>Axes available on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.axisStates">
+            <summary>Current positions of all axes on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.availableSliders">
+            <summary>Sliders available on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.sliderStates">
+            <summary>Current setting of all sliders on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.povCount">
+            <summary>Number of PoV controller available on the game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedGamePad.povStates">
+            <summary>Current state of all PoV controllers on the game pad</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.ButtonCount">
+            <summary>Reported number of buttons on the mocked game pad</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.AvailableAxes">
+            <summary>Reported axes on the mocked game pad</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.AvailableSliders">
+            <summary>Reported sliders on the mocked game pad</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.MockedGamePad.PovCount">
+            <summary>Reported number of PoV controllers on the mocked game pad</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.MockedKeyboard.keyMap">
+            <summary>Maps characters to the keys enumeration</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.NoTouchPanel">
+            <summary>Dummy touch input panel that acts as a placeholder</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoTouchPanel.#ctor">
+            <summary>Initializes a new touch panel dummy</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoTouchPanel.GetState">
+            <summary>Retrieves the current state of the touch panel</summary>
+            <returns>The current state of the touch panel</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoTouchPanel.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoTouchPanel.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoTouchPanel.Pressed">
+            <summary>Triggered when the user presses on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoTouchPanel.Released">
+            <summary>Triggered when the user moves his touch on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoTouchPanel.Moved">
+            <summary>Triggered when the user releases the screen again</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoTouchPanel.MaximumTouchCount">
+            <summary>Maximum number of simultaneous touches the panel supports</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoTouchPanel.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoTouchPanel.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.NoGamePad">
+            <summary>Dummy that takes the place of unfilled player slots</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoGamePad.#ctor">
+            <summary>Initializes a new game pad dummy</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoGamePad.GetState">
+            <summary>Retrieves the current state of the game pad</summary>
+            <returns>The current state of the game pad</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoGamePad.GetExtendedState">
+            <summary>Retrieves the current DirectInput joystick state</summary>
+            <returns>The current state of the DirectInput joystick</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoGamePad.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoGamePad.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="F:Nuclex.Input.Devices.NoGamePad.axes">
+            <summary>Neutral axis states for the extended game pad state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.NoGamePad.sliders">
+            <summary>Neutral slider states for the extended game pad state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.NoGamePad.buttons">
+            <summary>Neutral button states for the extended game pad state</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.NoGamePad.povs">
+            <summary>Neutral PoV controller states for the extended game pad state</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoGamePad.ButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoGamePad.ButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoGamePad.ExtendedButtonPressed">
+            <summary>Called when one or more buttons on the game pad have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoGamePad.ExtendedButtonReleased">
+            <summary>Called when one or more buttons on the game pad have been released</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoGamePad.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoGamePad.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.NoKeyboard">
+            <summary>Dummy that takes the place of unfilled keyboard slots</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoKeyboard.#ctor">
+            <summary>Initializes a new keyboard dummy</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoKeyboard.GetState">
+            <summary>Retrieves the current state of the keyboard</summary>
+            <returns>The current state of the keyboard</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoKeyboard.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoKeyboard.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoKeyboard.KeyPressed">
+            <summary>Fired when a key has been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoKeyboard.KeyReleased">
+            <summary>Fired when a key has been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoKeyboard.CharacterEntered">
+            <summary>Fired when the user has entered a character</summary>
+            <remarks>
+              This provides the complete, translated character the user has entered.
+              Handling of international keyboard layouts, shift key, accents and
+              other special cases is done by Windows according to the current users'
+              country and selected keyboard layout.
+            </remarks>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoKeyboard.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoKeyboard.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.NoMouse">
+            <summary>Dummy that takes the place on unfilled mouse slots</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoMouse.#ctor">
+            <summary>Initializes a new mouse dummy</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoMouse.GetState">
+            <summary>Retrieves the current state of the mouse</summary>
+            <returns>The current state of the mouse</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoMouse.MoveTo(System.Single,System.Single)">
+            <summary>Moves the mouse cursor to the specified location</summary>
+            <param name="x">New X coordinate of the mouse cursor</param>
+            <param name="y">New Y coordinate of the mouse cursor</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoMouse.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.NoMouse.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoMouse.MouseMoved">
+            <summary>Fired when the mouse has been moved</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoMouse.MouseButtonPressed">
+            <summary>Fired when one or more mouse buttons have been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoMouse.MouseButtonReleased">
+            <summary>Fired when one or more mouse buttons have been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.NoMouse.MouseWheelRotated">
+            <summary>Fired when the mouse wheel has been rotated</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoMouse.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.NoMouse.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.TouchPanelBase">
+            <summary>Common functionality for the touch input panel</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.GetState">
+            <summary>Retrieves the current state of the touch panel</summary>
+            <returns>The current state of the touch panel</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.OnPressed(System.Int32,Microsoft.Xna.Framework.Vector2@)">
+            <summary>Fires the Pressed event when the touch screen received a press</summary>
+            <param name="id">ID of the touch</param>
+            <param name="position">Position the user is touching the screen at</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.OnMoved(System.Int32,Microsoft.Xna.Framework.Vector2@)">
+            <summary>Fires the Moved event when the user moved on the touch screen</summary>
+            <param name="id">ID of the touch</param>
+            <param name="position">Position the user has moved his touch to</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.OnReleased(System.Int32,Microsoft.Xna.Framework.Vector2@)">
+            <summary>Fires the Released event when the user released the touch screen</summary>
+            <param name="id">ID of the touch</param>
+            <param name="position">Position at which the user has released the screen</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchPanelBase.GenerateEvents(Nuclex.Input.Devices.TouchState@,Nuclex.Input.Devices.TouchState@)">
+            <summary>Checks two touch states for changes an generates events</summary>
+            <param name="previous">Previous touch state that will be compared</param>
+            <param name="touchState">New touch state events will be generated for</param>
+        </member>
+        <member name="E:Nuclex.Input.Devices.TouchPanelBase.Pressed">
+            <summary>Triggered when the user presses on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.TouchPanelBase.Released">
+            <summary>Triggered when the user moves his touch on the screen</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.TouchPanelBase.Moved">
+            <summary>Triggered when the user releases the screen again</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.TouchPanelBase.MaximumTouchCount">
+            <summary>Maximum number of simultaneous touches the panel supports</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.TouchPanelBase.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.TouchPanelBase.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.TouchState">
+            <summary>Stores the state of a touch panel</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.TouchState.#ctor(System.Boolean,Microsoft.Xna.Framework.Input.Touch.TouchCollection)">
+            <summary>Initializes a new touch panel state</summary>
+            <param name="isAttached">Whether the touch panel is connected</param>
+            <param name="touches">Touch events since the last update</param>
+        </member>
+        <member name="F:Nuclex.Input.Devices.TouchState.isAttached">
+            <summary>Whether the touch panel is connected</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.TouchState.touches">
+            <summary>Collection of touches since the last update</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.TouchState.IsAttached">
+            <summary>Whether the touch panel is connected</summary>
+            <remarks>
+              If the touch panel is not connected, all data in the state will
+              be neutral
+            </remarks>
+        </member>
+        <member name="P:Nuclex.Input.Devices.TouchState.Touches">
+            <summary>Touch events that occured since the last update</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.XnaGamePad">
+            <summary>Interfaces with an XBox 360 controller via XNA (XINPUT)</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.#ctor(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>Initializes a new XNA-based keyboard device</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.GetState">
+            <summary>Retrieves the current state of the game pad</summary>
+            <returns>The current state of the game pad</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.GetExtendedState">
+            <summary>Retrieves the current DirectInput joystick state</summary>
+            <returns>The current state of the DirectInput joystick</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaGamePad.GenerateEvents(Microsoft.Xna.Framework.Input.GamePadState@,Microsoft.Xna.Framework.Input.GamePadState@)">
+            <summary>Checks for state changes and triggers the corresponding events</summary>
+            <param name="previous">Previous state of the game pad</param>
+            <param name="current">Current state of the game pad</param>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaGamePad.playerIndex">
+            <summary>Index of the player this device represents</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaGamePad.states">
+            <summary>Snapshots of the game pad state waiting to be processed</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaGamePad.current">
+            <summary>Currently published game pad state</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaGamePad.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaGamePad.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.XnaKeyboard">
+            <summary>Interfaces with an XBox 360 chat pad via XNA (XINPUT)</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.characterMap">
+            <summary>Maps the keys enumeration to characters</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.#ctor(Microsoft.Xna.Framework.PlayerIndex,Nuclex.Input.Devices.IGamePad)">
+            <summary>Initializes a new XNA-based keyboard device</summary>
+            <param name="playerIndex">Index of the player whose chat pad will be queried</param>
+            <param name="gamePad">Game pad the chat pad is attached to</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.GetState">
+            <summary>Retrieves the current state of the keyboard</summary>
+            <returns>The current state of the keyboard</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.OnKeyPressed(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>Fires the KeyPressed event</summary>
+            <param name="key">Key to report as having been pressed</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.OnKeyReleased(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>Fires the KeyReleased event</summary>
+            <param name="key">Key to report as having been releaed</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.OnCharacterEntered(System.Char)">
+            <summary>Fires the CharacterEntered event</summary>
+            <param name="character">Character to report as having been entered</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.getAllValidKeys">
+            <summary>Returns all entries in the XNA Keys enumeration</summary>
+            <returns>All entries in the keys enumeration</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.queryKeyboardState">
+            <summary>Updates the immediate (non-buffered) state of the keyboard</summary>
+            <remarks>
+              Only called when the game is not using the Update() and TakeSnapshot() methods
+              to buffer input.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.generateEvents(Microsoft.Xna.Framework.Input.KeyboardState@,Microsoft.Xna.Framework.Input.KeyboardState@)">
+            <summary>Generates events for the differences between two states</summary>
+            <param name="previous">Previous state the keyboard reported</param>
+            <param name="current">Current state reported by the keyboard</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaKeyboard.generateCharacterEvent(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>Generates the character entered event for the chat pad</summary>
+            <param name="key">Key that has been pressed on the chat pad</param>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.validKeys">
+            <summary>Contains all keys listed in the Keys enumeration</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.playerIndex">
+            <summary>Index of the player this device represents</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.gamePad">
+            <summary>Game pad the chat pad is attached to</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.states">
+            <summary>Snapshots of the keyboard state waiting to be processed</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaKeyboard.current">
+            <summary>Currently published keyboard state</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.XnaKeyboard.KeyPressed">
+            <summary>Fired when a key has been pressed</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.XnaKeyboard.KeyReleased">
+            <summary>Fired when a key has been released</summary>
+        </member>
+        <member name="E:Nuclex.Input.Devices.XnaKeyboard.CharacterEntered">
+            <summary>Fired when the user has entered a character</summary>
+            <remarks>
+              This provides the complete, translated character the user has entered.
+              Handling of international keyboard layouts, shift key, accents and
+              other special cases is done by Windows according to the current users'
+              country and selected keyboard layout.
+            </remarks>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaKeyboard.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaKeyboard.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.XnaTouchPanel">
+            <summary>XNA-based touch input panel for Windows Phone 7 devices</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaTouchPanel.#ctor">
+            <summary>Initializes a new touch panel based on the XNA framework</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaTouchPanel.GetState">
+            <summary>Retrieves the current state of the touch panel</summary>
+            <returns>The current state of the touch panel</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaTouchPanel.Update">
+            <summary>Updates the state of the input device</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will take
+                an immediate snapshot and make it the current state. This way, you
+                can use the input devices without caring for the snapshot system if
+                you wish.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.XnaTouchPanel.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of the input device</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaTouchPanel.states">
+            <summary>Snapshots of the touch panel state waiting to be processed</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.XnaTouchPanel.current">
+            <summary>Currently published game pad state</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaTouchPanel.MaximumTouchCount">
+            <summary>Maximum number of simultaneous touches the panel supports</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaTouchPanel.IsAttached">
+            <summary>Whether the input device is connected to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.XnaTouchPanel.Name">
+            <summary>Human-readable name of the input device</summary>
+        </member>
+        <member name="T:Nuclex.Input.ExtendedPlayerIndex">
+            <summary>Player index enumeration with slots for 8 players</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.One">
+            <summary>First player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Two">
+            <summary>Second player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Three">
+            <summary>Third player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Four">
+            <summary>Fourth player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Five">
+            <summary>Fifth player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Six">
+            <summary>Sixth player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Seven">
+            <summary>Seventh player</summary>
+        </member>
+        <member name="F:Nuclex.Input.ExtendedPlayerIndex.Eight">
+            <summary>Eigth player</summary>
+        </member>
+        <member name="T:Nuclex.Input.GamePadButtonsHelper">
+            <summary>Contains helper methods for the GamePadButtons enumeration</summary>
+        </member>
+        <member name="M:Nuclex.Input.GamePadButtonsHelper.Contains(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.Input.Buttons)">
+            <summary>Checks whether buttons are contained in a button flag field</summary>
+            <param name="buttons">Button flag field that will be checked</param>
+            <param name="button">Buttons for which the method will check</param>
+            <returns>True if all specified buttons appear in the flag field</returns>
+        </member>
+        <member name="T:Nuclex.Input.IInputService">
+            <summary>Provides access to the game's input devices</summary>
+            <remarks>
+              This interface provides a uniform way to access all input devices available
+              to the system. It also allows XNA games to interface with standard game pads
+              and joysticks through DirectInput.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetMouse">
+            <summary>Returns the primary mouse input device</summary>
+            <returns>The primary mouse</returns>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetKeyboard">
+            <summary>Returns the keyboard on a PC</summary>
+            <returns>The keyboard</returns>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetKeyboard(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>Returns the chat pad for the specified player</summary>
+            <param name="playerIndex">Player whose chat pad will be returned</param>
+            <returns>The chat pad of the specified player</returns>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetGamePad(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>Returns the game pad for the specified player</summary>
+            <param name="playerIndex">Player whose game pad will be returned</param>
+            <returns>The game pad of the specified player</returns>
+            <remarks>
+              This will only return the XINPUT devices (aka XBox 360 controllers)
+              attached. Any standard game pads attached to a PC can only be
+              returned through the ExtendedPlayerIndex overload where they will
+              take the places of game pads for player 5 and upwards.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetGamePad(Nuclex.Input.ExtendedPlayerIndex)">
+            <summary>Returns the game pad for the specified player</summary>
+            <param name="playerIndex">Player whose game pad will be returned</param>
+            <returns>The game pad of the specified player</returns>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.GetTouchPanel">
+            <summary>Returns the touch panel on the system</summary>
+            <returns>The system's touch panel</returns>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.Update">
+            <summary>Updates the state of all input devices</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will
+                query the state of all input devices immediately, raising events
+                for any changed states. This way, you can ignore the entire
+                snapshot system if you just want basic input device access.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state of all active devices.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.IInputService.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of all input devices</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="P:Nuclex.Input.IInputService.Keyboards">
+            <summary>All keyboards known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.IInputService.Mice">
+            <summary>All mice known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.IInputService.GamePads">
+            <summary>All game pads known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.IInputService.TouchPanels">
+            <summary>All touch panels known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.IInputService.SnapshotCount">
+            <summary>Number of snapshots currently in the queue</summary>
+        </member>
+        <member name="T:Nuclex.Input.InputManager">
+            <summary>Manages and polls input devices</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.#ctor">
+            <summary>Initializes a new input manager</summary>
+            <remarks>
+              This overload is offered for convenience and takes the window handle
+              from XNA's Mouse class. It will only work if your game is either based
+              on the XNA Game class or if you assign the Mouse.WindowHandle
+              property sourself.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.#ctor(System.IntPtr)">
+            <summary>Initializes a new input manager</summary>
+            <param name="windowHandle">Handle of the game's main window</param>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.#ctor(Microsoft.Xna.Framework.GameServiceContainer)">
+            <summary>Initializs a new input manager</summary>
+            <param name="services">Game service container the manager registers to</param>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.#ctor(Microsoft.Xna.Framework.GameServiceContainer,System.IntPtr)">
+            <summary>Initializs a new input manager</summary>
+            <param name="services">Game service container the manager registers to</param>
+            <param name="windowHandle">Handle of the game's main window</param>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.Dispose">
+            <summary>Immediately releases all resources owned by the instance</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetMouse">
+            <summary>Returns the primary mouse input device</summary>
+            <returns>The primary mouse</returns>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetKeyboard">
+            <summary>Returns the keyboard on a PC</summary>
+            <returns>The keyboard</returns>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetKeyboard(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>Returns the chat pad for the specified player</summary>
+            <param name="playerIndex">Player whose chat pad will be returned</param>
+            <returns>The chat pad of the specified player</returns>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetGamePad(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>Returns the game pad for the specified player</summary>
+            <param name="playerIndex">Player whose game pad will be returned</param>
+            <returns>The game pad of the specified player</returns>
+            <remarks>
+              This will only return the XINPUT devices (aka XBox 360 controllers)
+              attached. Any standard game pads attached to a PC can only be
+              returned through the ExtendedPlayerIndex overload where they will
+              take the places of game pads for player 5 and upwards.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetGamePad(Nuclex.Input.ExtendedPlayerIndex)">
+            <summary>Returns the game pad for the specified player</summary>
+            <param name="playerIndex">Player whose game pad will be returned</param>
+            <returns>The game pad of the specified player</returns>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.GetTouchPanel">
+            <summary>Returns the touch panel on the system</summary>
+            <returns>The system's touch panel</returns>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.Update">
+            <summary>Updates the state of all input devices</summary>
+            <remarks>
+              <para>
+                If this method is called with no snapshots in the queue, it will
+                query the state of all input devices immediately, raising events
+                for any changed states. This way, you can ignore the entire
+                snapshot system if you just want basic input device access.
+              </para>
+              <para>
+                If this method is called while one or more snapshots are waiting in
+                the queue, this method takes the next snapshot from the queue and makes
+                it the current state of all active devices.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.TakeSnapshot">
+            <summary>Takes a snapshot of the current state of all input devices</summary>
+            <remarks>
+              This snapshot will be queued until the user calls the Update() method,
+              where the next polled snapshot will be taken from the queue and provided
+              to the user.
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.OnUpdateOrderChanged">
+            <summary>Fires the UpdateOrderChanged event</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.Microsoft#Xna#Framework#IGameComponent#Initialize">
+            <summary>Only exists to implement IGameComponent</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.Microsoft#Xna#Framework#IUpdateable#Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>Updates the state of all input devices</summary>
+            <param name="gameTime">Not used</param>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.setupGamePads">
+            <summary>Sets up the collection of available game pads</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.setupMouse">
+            <summary>Sets up the collection of available mice</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.setupKeyboards">
+            <summary>Sets up the collection of available keyboards</summary>
+        </member>
+        <member name="M:Nuclex.Input.InputManager.setupTouchPanels">
+            <summary>Sets up the collection of available touch panels</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.gamePads">
+            <summary>Collection of all game pads known to the system</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.mice">
+            <summary>Collection of all mice known to the system</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.keyboards">
+            <summary>Collection of all keyboards known to the system</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.touchPanels">
+            <summary>Collection of all touch panels known to the system</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.snapshotCount">
+            <summary>Number of state snap shots currently queued</summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.updateOrder">
+            <summary>
+              Controls the order in which this game component is updated relative
+              to other game components.
+            </summary>
+        </member>
+        <member name="F:Nuclex.Input.InputManager.gameServices">
+            <summary>Game service container, saved to unregister on dispose</summary>
+        </member>
+        <member name="E:Nuclex.Input.InputManager.UpdateOrderChanged">
+            <summary>Fired when the UpdateOrder property changes its  value</summary>
+        </member>
+        <member name="E:Nuclex.Input.InputManager.EnabledChanged">
+            <summary>Fired when the Enabled property changes its value</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.Keyboards">
+            <summary>All keyboards known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.Mice">
+            <summary>All mice known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.GamePads">
+            <summary>All game pads known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.TouchPanels">
+            <summary>All touch panels known to the system</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.SnapshotCount">
+            <summary>Number of snapshots currently in the queue</summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.UpdateOrder">
+            <summary>
+              Indicates when the game component should be updated relative to other game
+              components. Lower values are updated first.
+            </summary>
+        </member>
+        <member name="P:Nuclex.Input.InputManager.Microsoft#Xna#Framework#IUpdateable#Enabled">
+            <summary>Whether the component is currently enabled</summary>
+        </member>
+        <member name="T:Nuclex.Input.Devices.LeakyQueue`1">
+            <summary>Specialized queue which lets users access its raw data</summary>
+            <typeparam name="ItemType">Type of items the queue will contain</typeparam>
+            <remarks>
+              No, it doesn't leak memory. It leaks implementation details. :o)
+            </remarks>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.DefaultCapacity">
+            <summary>Default capacity a new leaky queue will have</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.GrowFactor">
+            <summary>Factor by which the queue grows if its capacity is exceeded</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.MinimumGrow">
+            <summary>Minimum number of items the queue will grow by</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.#ctor">
+            <summary>Initializes a new leaky queue</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.#ctor(System.Int32)">
+            <summary>Initializes a new leaky queue with the specified capacity</summary>
+            <param name="capacity">Initial capacity of the leaky queue</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.Clear">
+            <summary>Removes all items from the queue</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.Contains(`0)">
+            <summary>Tests whether the queue contains the specified item</summary>
+            <param name="searchedItem">Item the queue will be tested for</param>
+            <returns>True if the queue contains the specified item</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.Dequeue">
+            <summary>Removes the oldest item from the queue and returns it</summary>
+            <returns>The oldest item that was in the queue</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.AdvanceHead">
+            <summary>Advances the head index of the queue</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.Enqueue(`0)">
+            <summary>Appends an item to the queue</summary>
+            <param name="item">Item that will be appended</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.AdvanceTail">
+            <summary>Advances the tail index of the queue</summary>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.EnsureSlotAvailable">
+            <summary>
+              Ensures that the is space for at least one more item available
+            </summary>
+            <remarks>
+              Call this before manually inserting an item into the queue
+            </remarks>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.Peek">
+            <summary>Returns the oldest item in the queue without removing it</summary>
+            <returns>The oldest item that is in the queue</returns>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.setCapacity(System.Int32)">
+            <summary>Changes the capacity of the queue</summary>
+            <param name="capacity">New capacity the queue will assume</param>
+        </member>
+        <member name="M:Nuclex.Input.Devices.LeakyQueue`1.ToArray">
+            <summary>Returns the contents of the queue as an array</summary>
+            <returns>A new array containing all items that are in the queue</returns>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.emptyArray">
+            <summary>Empty item array to avoid garbage during initialization</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.items">
+            <summary>Contains the ring-buffered items stored in the queue</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.headIndex">
+            <summary>Index of the queue's head element</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.tailIndex">
+            <summary>Index of the queue's tail element</summary>
+        </member>
+        <member name="F:Nuclex.Input.Devices.LeakyQueue`1.count">
+            <summary>Number of items currently contained in the queue</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.LeakyQueue`1.Count">
+            <summary>Number of items currently stored in the queue</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.LeakyQueue`1.HeadIndex">
+            <summary>Index of the first item in the queue</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.LeakyQueue`1.TailIndex">
+            <summary>Index one past the last item in the queue</summary>
+        </member>
+        <member name="P:Nuclex.Input.Devices.LeakyQueue`1.Items">
+            <summary>Returns the internal item array of the queue</summary>
+        </member>
+        <member name="T:Nuclex.Input.MouseButtons">
+            <summary>Available buttons on a mouse</summary>
+        </member>
+        <member name="F:Nuclex.Input.MouseButtons.Left">
+            <summary>Left mouse button</summary>
+        </member>
+        <member name="F:Nuclex.Input.MouseButtons.Middle">
+            <summary>Middle mouse button</summary>
+        </member>
+        <member name="F:Nuclex.Input.MouseButtons.Right">
+            <summary>Right mouse button</summary>
+        </member>
+        <member name="F:Nuclex.Input.MouseButtons.X1">
+            <summary>First extended mouse button</summary>
+        </member>
+        <member name="F:Nuclex.Input.MouseButtons.X2">
+            <summary>Second extended mouse button</summary>
+        </member>
+    </members>
+</doc>

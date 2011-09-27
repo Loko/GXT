@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GXT.gxtSortAndSweepCollider&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAgCAACAAQAYAgYQAAAAQABAAAYAQUBAAABAEQAAA=</HashCode>
+      <FileName>Collision\Broadphase\gxtSortAndSweepCollider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtGeometry" Collapsed="true">
+    <Position X="33" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIQAAAAAAACgAIAAAAAQAAgAAAQAAEAgAAAAA=</HashCode>
+      <FileName>Collision\gxtGeometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtRayHit" Collapsed="true">
+    <Position X="34.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAhAAEAIQEBAAAACAAAAAgA=</HashCode>
+      <FileName>Collision\gxtRayHit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtNarrowPhaseCollider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAICAAAAAgAAAAQAAAAAAAAAAAAAAAAQAII=</HashCode>
+      <FileName>Collision\Narrowphase\gxtNarrowPhaseCollider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtDebug" Collapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAQAAAAgAAAAAAAAAAQAAABAAAAAAIAA=</HashCode>
+      <FileName>Debug\gxtDebug.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtDebugDrawer" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAwAgAAgQQAAJcBDZBAADUAAAIAABCAoQCBoDAAAICA=</HashCode>
+      <FileName>Debug\gxtDebugDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtGame" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAyAAAAAgAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game\gxtGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtRoot" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAQiB2QABIJAAyAAgAgQCIAAKCiAAAAIYAkABEAAIoA=</HashCode>
+      <FileName>Game\gxtRoot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtLog" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAZAAAAAAAAAAAIAAIAAAAgAAAAAAAAg=</HashCode>
+      <FileName>Log\gxtLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtConsoleLogListener" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAggAAAAAAAaACEAEgABAAABAAIAABAgAAAAAAAAg=</HashCode>
+      <FileName>Log\LogListeners\gxtConsoleLogListener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtHTMLLogListener" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAgAAAAAAAAaACEAEgABAAABAAIAABAgBAAAAAAAg=</HashCode>
+      <FileName>Log\LogListeners\gxtHTMLLogListener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtMath" Collapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>jgAIIwCJATAoI5gI0ABECAIkAj2CANAIgYAQAACoAAM=</HashCode>
+      <FileName>Math\gxtMath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtGameScreen" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAEACAACBAAwAEEAIAAAAAQAAEAAgAAAAGAAYABAQ=</HashCode>
+      <FileName>ScreenManager\gxtGameScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtScreenManager" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAFAAgEEAAIwAAAAAAAAAAAABACAAARAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManager\gxtScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtHashedString" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAABAwACAAgAAAAEAAKABAAAAAAAAAiA=</HashCode>
+      <FileName>Types\gxtHashedString.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.gxtPair&lt;T, U&gt;" Collapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\gxtPair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\gxtSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.gxtWorld" Collapsed="true">
+    <Position X="31.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hEQChJCAAgEQA2AgBIIAAgBEAAIEBAAAAIAAAAAEAAA=</HashCode>
+      <FileName>World\gxtWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtDebugDrawable" Collapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAQAAAAAA=</HashCode>
+      <FileName>Debug\gxtDebugDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtCamera" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAIAAACBIggFAAACBIAAAAkAAAAAEAEBAAAAAE=</HashCode>
+      <FileName>Rendering\Cameras\gxtCamera.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtDisplayManager" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCgAggAAAEBCAwIEAgAAAAAAEAAEAAgIAIAAAAAAAAA=</HashCode>
+      <FileName>Rendering\gxtDisplayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtDrawManager" Collapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAwAAAAAABAAAAAggAAkAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\gxtDrawManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtCircle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAIAAAAAAgAgQAAAAAAAAAAAABAoAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Primitives\gxtCircle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtLine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAACAAAgAAQAAAAAAAAAAAABAoAEAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Primitives\gxtLine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtLineBatch" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAoAAAAAAgAAQAgABAAAEAAAIEAoCEAAAABAAAA=</HashCode>
+      <FileName>Rendering\Primitives\gxtLine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtPrimitiveManager" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAQADAAAAAAQAAAEABAAAAAQAAAAAAAAABAAAAAQA=</HashCode>
+      <FileName>Rendering\Primitives\gxtPrimitiveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtRectangle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAgoAgQAAAAEAAAAAAABAoAAAAAAgAAAA=</HashCode>
+      <FileName>Rendering\Primitives\gxtRectangle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtSimpleSprite" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAgQAAAAEAAAAAAAAAoAAIAAAgAAAA=</HashCode>
+      <FileName>Rendering\Sprites\gxtSimpleSprite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtSprite" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABQAAAoAAQAIAgEAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Sprites\gxtSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtTiledSprite" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABAAAAiAgQABAAEgAAACAAAAoAQIAAAgAAAg=</HashCode>
+      <FileName>Rendering\Sprites\gxtTiledSprite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtSpriteFrame" Collapsed="true">
+    <Position X="31.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAE=</HashCode>
+      <FileName>Rendering\SpriteSheets\FrameSequences\gxtSpriteFrame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtUniformFrameSequence" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAEGAAABABAAAAAIAAEAEgQAAAAAAIAAgAAAA=</HashCode>
+      <FileName>Rendering\SpriteSheets\FrameSequences\gxtUniformFrameSequence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtVariableFrameSequence" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAEGAAAAABAAAAAIAAEAEAQAAAAAAIAQAAAAA=</HashCode>
+      <FileName>Rendering\SpriteSheets\FrameSequences\gxtVariableFrameSequence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtSimpleSpriteSheet" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAgQAAAAEAAEAAAAAAoAAIAAAgAAAA=</HashCode>
+      <FileName>Rendering\SpriteSheets\gxtSimpleSpriteSheet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtSpriteSheet" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABQAAAoAAQAIAAEAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\SpriteSheets\gxtSpriteSheet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Rendering.gxtSimpleTextField" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAACIABAAAAgAgQAAAAEAAAAAAABAoAAAACAgCAAA=</HashCode>
+      <FileName>Rendering\Text\gxtSimpleTextField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GXT.Rendering.gxtTextField" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAoAAQAIAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Text\gxtTextField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtGamepad" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAUAEgAAADAAAJEAGQkAAIAAAQAgAFBAgCAAGA=</HashCode>
+      <FileName>Input\gxtGamepad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtGamepadManager" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAAAAAQAAAAAAAAAAAABAACACAAgAAgIAAAA=</HashCode>
+      <FileName>Input\gxtGamepadManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtKeyboard" Collapsed="true">
+    <Position X="29.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIEAEAAgAAAAAAAJEIOQgAAIAAAAAIAFBAAAAAAA=</HashCode>
+      <FileName>Input\gxtKeyboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtKeyboardManager" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAAAQAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Input\gxtKeyboardManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtMouse" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAEACgAAAAAgAJEAGQhIAIAAhAAAAFBAAIAAAA=</HashCode>
+      <FileName>Input\gxtMouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtMouseManager" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAEBAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Input\gxtMouseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Input.gxtPlayerIndexEqualityComparer" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Input\gxtPlayerIndexEqualityComparer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GXT.IO.gxtDirectory" Collapsed="true">
+    <Position X="33" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IO\gxtDirectory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.IO.gxtINIFile" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAACwAAAACgAAAgAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>IO\gxtINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.IO.gxtXMLSerializer" Collapsed="true">
+    <Position X="33" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>IO\gxtXMLSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Physics.gxtGeom" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQKCOACCGAgAIAkgEiAIABCgCQAA4gAoAQMgkAACro=</HashCode>
+      <FileName>Physics\gxtGeom.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Physics.gxtPhysicsMaterial" Collapsed="true">
+    <Position X="29.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAQEAAAEAAAAQAAAAAAE=</HashCode>
+      <FileName>Physics\gxtPhysicsMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Physics.gxtPhysicsWorld" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZAQAAhgACCAIEYALYADAAAAAUQAgAAAAQKAABAEQAAo=</HashCode>
+      <FileName>Physics\gxtPhysicsWorld.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Physics.gxtRigidBody" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oOwAACAEgJFEEoCxAAKAOEABAEmBMwwAwEwHUgDuAVE=</HashCode>
+      <FileName>Physics\gxtRigidBody.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Physics.gxtSolver" Collapsed="true">
+    <Position X="27.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAIIAAAAAIAAIAIAAAAAAQAAAIgAE=</HashCode>
+      <FileName>Physics\gxtSolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GXT.Processes.gxtProcess">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAABAAAAAAAIAkQAAAAAAAAAAAAAAIAAAAEAAAAAA=</HashCode>
+      <FileName>Processes\gxtProcess.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GXT.Processes.gxtProcessManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAaAAAAAABCQAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Processes\gxtProcessManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Processes.gxtEventTimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBBAAAASAABIAEACCABAAgAQQAAAEAIAAAAAAAAAA=</HashCode>
+      <FileName>Processes\Timers\gxtEventTimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Processes.gxtStopWatch" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAASAABIAAAACAAAAAAAAQAAAAIAAAAgAAAAA=</HashCode>
+      <FileName>Processes\Timers\gxtStopWatch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GXT.Processes.gxtWaitProcess">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processes\Wait\gxtWaitProcess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="GXT.gxtBroadphaseCollisionPair&lt;T&gt;" Collapsed="true">
+    <Position X="26" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAEgAAAAAAAA=</HashCode>
+      <FileName>Collision\Broadphase\gxtBroadphaseCollisionPair.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GXT.gxtCollisionResult" Collapsed="true">
+    <Position X="27.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAAAAAwAAAAAAAAAAAAABAQAAIQgAgAAAAAAAAAAA=</HashCode>
+      <FileName>Collision\gxtCollisionResult.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GXT.gxtPolygon" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEACAAgAoEAAAAEAAgEoAAABJEEAAAAqA=</HashCode>
+      <FileName>Collision\gxtPolygon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GXT.gxtRay" Collapsed="true">
+    <Position X="24.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAAAAAIAQAACAAAAAAAABAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Collision\gxtRay.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GXT.gxtAABB" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AERAAEKIBBAAAAQgkAgSAEAAAAAIAYCADACFAAAQAqA=</HashCode>
+      <FileName>Collision\Volumes\gxtAABB.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GXT.gxtOBB" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAABAIBAAAAIQggAgCAEAAAABBAICARAAFIAAQAqA=</HashCode>
+      <FileName>Collision\Volumes\gxtOBB.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GXT.gxtSphere" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARIAEAAAAAAAAAggAgCAAAAAABAAYCAhAAFAAAQAqA=</HashCode>
+      <FileName>Collision\Volumes\gxtSphere.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GXT.Rendering.gxtPtPair" Collapsed="true">
+    <Position X="34.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Primitives\gxtLine.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GXT.Physics.gxtGeomTestPair" Collapsed="true">
+    <Position X="29.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Physics\gxtGeomTestPair.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="GXT.gxtIActor">
+    <Position X="3.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAABAAAIAgAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Actors\gxtIActor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtIBroadPhaseCollider&lt;T&gt;" Collapsed="true">
+    <Position X="24.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAACAAAAQAAIAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Collision\Broadphase\gxtIBroadPhaseCollider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtINarrowPhaseCollider" Collapsed="true">
+    <Position X="34.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAgAAAAQAAAAAAAAAAAAAAAAQAII=</HashCode>
+      <FileName>Collision\Narrowphase\gxtINarrowPhaseCollider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtILogListener" Collapsed="true">
+    <Position X="33" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAIAAAAAgAAAAABAAIAABAgAAAAAAAAg=</HashCode>
+      <FileName>Log\LogListeners\gxtILogListener.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtIColor" Collapsed="true">
+    <Position X="27.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\Interfaces\Base\gxtIColor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtIPosition" Collapsed="true">
+    <Position X="24.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\Interfaces\Base\gxtIPosition.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.gxtIUpdate">
+    <Position X="3.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\Interfaces\Processes\gxtIUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.Rendering.gxtICamera" Collapsed="true">
+    <Position X="26" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIggFAAAAAIAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Cameras\gxtICamera.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.Rendering.gxtIFrameSequence" Collapsed="true">
+    <Position X="31.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAEGAAAAABAAAAAAAAEAEAQAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Rendering\SpriteSheets\FrameSequences\gxtIFrameSequence.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GXT.Rendering.gxtIDraw" Collapsed="true">
+    <Position X="29.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAoAAAAAAAAAAA=</HashCode>
+      <FileName>Types\Interfaces\Rendering\gxtIDraw.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GXT.gxtVerbosityLevel" Collapsed="true">
+    <Position X="24.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Log\gxtLog.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.gxtScreenState" Collapsed="true">
+    <Position X="34.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAEAAA=</HashCode>
+      <FileName>ScreenManager\gxtGameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Input.gxtMouseButton" Collapsed="true">
+    <Position X="29.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAQABAgAAAAAAAAgAA=</HashCode>
+      <FileName>Input\gxtMouse.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Input.gxtControlState" Collapsed="true">
+    <Position X="26" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAICAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Types\Enums\Input\gxtControlState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Physics.gxtRigidyBodyMotion" Collapsed="true">
+    <Position X="33" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Physics\gxtRigidBody.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Physics.gxtFrictionType" Collapsed="true">
+    <Position X="27.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Physics\gxtSolver.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Physics.gxtCollisionGroup" Collapsed="true">
+    <Position X="24.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAABAAMAfAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\Enums\Physics\gxtCollisionGroup.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GXT.Processes.gxtProcessType" Collapsed="true">
+    <Position X="31.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Processes\gxtProcess.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="GXT.gxtStringHashFunction" Collapsed="true">
+    <Position X="29.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\gxtHashedString.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GXT.Rendering.ResolutionChangedHandler" Collapsed="true">
+    <Position X="31.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\gxtDisplayManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GXT.Input.gxtControllerConnectionChangedEventHandler" Collapsed="true">
+    <Position X="24.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Input\gxtGamepadManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GXT.Physics.gxtGeomCollisionEventHandler" Collapsed="true">
+    <Position X="27.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Physics\gxtGeom.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GXT.Processes.gxtEventTimerElapsedHandler" Collapsed="true">
+    <Position X="26" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processes\Timers\gxtEventTimer.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

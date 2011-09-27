@@ -1,0 +1,12 @@
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\bin\x86\Release\ASG_SANDBOX.exe
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\bin\x86\Release\ASG_SANDBOX.pdb
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ASG_SANDBOX.exe
+C:\Users\Loko\Desktop\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ASG_SANDBOX.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\bin\x86\Release\ASG_SANDBOX.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\bin\x86\Release\ASG_SANDBOX.pdb
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ASG_SANDBOX.exe
+C:\Users\Loko\Documents\Code\asg_project\ASG\ASG_SANDBOX\ASG_SANDBOX\obj\x86\Release\ASG_SANDBOX.pdb

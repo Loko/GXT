@@ -1,0 +1,14 @@
+﻿gxtPlayerIndexEqualityComparer to a real singleton?
+collision response after tuning epa
+fixed rotation boolean in rigid body class
+MoI for polygon
+
+Questions for Egert
+	- Resources for collision response
+	- Material binded to rigid body or geom
+	- How should Triggers be handled?
+		- Geom class could handle it now, just may not be clear (disable response, bind events to trigger)
+	- Make a shape class?
+		- Support for more than just polygons?  Only really beneficial for circles, boxes are just 4 vertices
+	- Raycast in a sweep and prune
+	- Joints/Constraints?
